@@ -9,6 +9,12 @@ services:
       - "8080:8080"
     networks:
       - inventory-network
+    healthcheck:
+      test: [ "CMD", "curl", "--fail", "http://localhost:8080/health" ]
+      interval: 10s
+      retries: 3
+      timeout: 5s
+      start_period: 20s
 
   product-service:
     build:
@@ -18,6 +24,12 @@ services:
       - "8081:8081"
     networks:
       - inventory-network
+    healthcheck:
+      test: [ "CMD", "curl", "--fail", "http://localhost:8081/health" ]
+      interval: 10s
+      retries: 3
+      timeout: 5s
+      start_period: 20s
 
   sale-service:
     build:
@@ -27,6 +39,12 @@ services:
       - "8082:8082"
     networks:
       - inventory-network
+    healthcheck:
+      test: [ "CMD", "curl", "--fail", "http://localhost:8082/health" ]
+      interval: 10s
+      retries: 3
+      timeout: 5s
+      start_period: 20s
 
 networks:
   inventory-network:
