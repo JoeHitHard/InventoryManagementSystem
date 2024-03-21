@@ -10,6 +10,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+import static java.lang.System.exit;
+
 public class Product {
 
     public static final String PRODUCTS_TABLE = "products";
@@ -60,7 +62,7 @@ public class Product {
     }
 
     public Product update() {
-        productDAO.update(productId, name, description, price, quantity);
+        productDAO.update(productId, name, description, price, quantity, productId);
         return this;
     }
 
