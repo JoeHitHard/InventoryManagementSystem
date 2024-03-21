@@ -21,17 +21,6 @@ public class ProductRequestBody {
         this.quantity = quantity;
     }
 
-    public static void main(String[] args) {
-        ObjectMapper objectMapper = new ObjectMapper();
-        try {
-            ProductRequestBody requestBody = objectMapper.readValue("{\"name\":\"sasa\",\"description\":\"Et aut nobis ipsum ducimus est voluptatem voluptatibus.\",\"price\":5.58,\"quantity\":14}", ProductRequestBody.class);
-        } catch (JsonProcessingException e) {
-            throw new RuntimeException(e);
-        }
-
-
-    }
-
     public String getName() {
         return name;
     }
