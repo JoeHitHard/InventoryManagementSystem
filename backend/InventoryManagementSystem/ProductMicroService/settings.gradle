@@ -1,1 +1,2 @@
 rootProject.name = 'InventoryManagementSystemProduct'
+includeBuild '/Users/josephmeghanath/InventoryManagementSystem/backend/InventoryManagementSystem/InventoryManagementSystem-Base'

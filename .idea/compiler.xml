@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="aad.project.InventoryManagementSystem" target="21" />
+      <module name="aad.project.InventoryManagementSystem.main" target="21" />
+      <module name="aad.project.InventoryManagementSystem.test" target="21" />
+      <module name="aad.project.InventoryManagementSystemSale" target="21" />
+      <module name="aad.project.InventoryManagementSystemSale.main" target="21" />
+      <module name="aad.project.InventoryManagementSystemSale.test" target="21" />
+      <module name="AuthMicroService.InventoryManagementSystem" target="21" />
+      <module name="AuthMicroService.InventoryManagementSystem.main" target="21" />
+      <module name="AuthMicroService.InventoryManagementSystem.test" target="21" />
+      <module name="IMSJar" target="21" />
+      <module name="IMSJar.main" target="21" />
+      <module name="IMSJar.test" target="21" />
+      <module name="InventoryManagementSystemSale" target="21" />
+      <module name="InventoryManagementSystemSale.main" target="21" />
+      <module name="InventoryManagementSystemSale.test" target="21" />
+      <module name="ProductMicroService.InventoryManagementSystem" target="21" />
+      <module name="ProductMicroService.InventoryManagementSystem.main" target="21" />
+      <module name="ProductMicroService.InventoryManagementSystem.test" target="21" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

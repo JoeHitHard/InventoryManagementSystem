@@ -1,8 +1,8 @@
 package aad.project.InventoryManagementSystem;
 
-import aad.project.InventoryManagementSystem.storage.entitites.Product;
-import aad.project.InventoryManagementSystem.storage.entitites.Sale;
-import aad.project.InventoryManagementSystem.storage.entitites.User;
+import aad.project.InventoryManagementSystem.storage.entity.Product;
+import aad.project.InventoryManagementSystem.storage.entity.Sale;
+import aad.project.InventoryManagementSystem.storage.entity.User;
 import com.github.javafaker.Faker;
 
 import java.util.concurrent.TimeUnit;

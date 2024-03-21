@@ -22,6 +22,9 @@ dependencies {
 	implementation 'io.jsonwebtoken:jjwt:0.12.4'
 	implementation 'com.datastax.cassandra:cassandra-driver-core:4.0.0'
 	implementation 'com.datastax.oss:java-driver-core:4.17.0'
+	implementation 'aad.project:InventoryManagementSystem-Base'
+
+//	implementation files('/Users/josephmeghanath/InventoryManagementSystem/backend/InventoryManagementSystem/IMSJar/build/libs/InventoryManagementSystemSale-0.0.1-SNAPSHOT.jar')
 
 	// generator deps
 	implementation("com.github.javafaker:javafaker:1.0.2"){ exclude module : "snakeyaml" }

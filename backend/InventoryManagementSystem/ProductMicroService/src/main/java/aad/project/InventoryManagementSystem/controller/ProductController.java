@@ -20,7 +20,7 @@ public class ProductController {
 
     // Create a new product
     @PostMapping
-    public ResponseEntity<Product> createProduct(@RequestBody String productRequestBody,  @RequestHeader("Authorization") @DefaultValue("XXX") String authorizationHeader) throws InvalidAuthRequest {
+    public ResponseEntity<Product> createProduct(@RequestBody String productRequestBody, @RequestHeader("Authorization") @DefaultValue("XXX") String authorizationHeader) throws InvalidAuthRequest {
         User user = RequestAuthUtils.getUser(authorizationHeader);
         ObjectMapper objectMapper = new ObjectMapper();
         try {
@@ -36,7 +36,7 @@ public class ProductController {
 
     // Retrieve a product by ID
     @GetMapping("/{id}")
-    public ResponseEntity<Product> getProductById(@PathVariable String id,  @RequestHeader("Authorization") @DefaultValue("XXX") String authorizationHeader) throws InvalidAuthRequest {
+    public ResponseEntity<Product> getProductById(@PathVariable String id, @RequestHeader("Authorization") @DefaultValue("XXX") String authorizationHeader) throws InvalidAuthRequest {
         User user = RequestAuthUtils.getUser(authorizationHeader);
         Product product = new Product(id);
         return new ResponseEntity<>(product, HttpStatus.OK);
@@ -44,7 +44,7 @@ public class ProductController {
 
     // Retrieve all products
     @GetMapping
-    public ResponseEntity<List<Product>> getAllProducts( @RequestHeader("Authorization") @DefaultValue("XXX") String authorizationHeader) throws InvalidAuthRequest {
+    public ResponseEntity<List<Product>> getAllProducts(@RequestHeader("Authorization") @DefaultValue("XXX") String authorizationHeader) throws InvalidAuthRequest {
         User user = RequestAuthUtils.getUser(authorizationHeader);
         List<Product> products = Product.ProductDAO.getAllProducts();
         return new ResponseEntity<>(products, HttpStatus.OK);

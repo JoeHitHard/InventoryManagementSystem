@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/backend/InventoryManagementSystem/AuthMicroService" />
+        <option name="gradleJvm" value="openjdk-21" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/backend/InventoryManagementSystem/AuthMicroService" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <compositeConfiguration>
+          <compositeBuild compositeDefinitionSource="SCRIPT">
+            <builds>
+              <build path="$PROJECT_DIR$/backend/InventoryManagementSystem/InventoryManagementSystem-Base" name="InventoryManagementSystem-Base">
+                <projects>
+                  <project path="$PROJECT_DIR$/backend/InventoryManagementSystem/InventoryManagementSystem-Base" />
+                </projects>
+              </build>
+            </builds>
+          </compositeBuild>
+        </compositeConfiguration>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/backend/InventoryManagementSystem/ProductMicroService" />
+        <option name="gradleJvm" value="openjdk-21" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/backend/InventoryManagementSystem/InventoryManagementSystem-Base" />
+            <option value="$PROJECT_DIR$/backend/InventoryManagementSystem/ProductMicroService" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <compositeConfiguration>
+          <compositeBuild compositeDefinitionSource="SCRIPT">
+            <builds>
+              <build path="$PROJECT_DIR$/backend/InventoryManagementSystem/InventoryManagementSystem-Base" name="InventoryManagementSystem-Base">
+                <projects>
+                  <project path="$PROJECT_DIR$/backend/InventoryManagementSystem/InventoryManagementSystem-Base" />
+                </projects>
+              </build>
+            </builds>
+          </compositeBuild>
+        </compositeConfiguration>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/backend/InventoryManagementSystem/SaleMicroService" />
+        <option name="gradleJvm" value="openjdk-21" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/backend/InventoryManagementSystem/InventoryManagementSystem-Base" />
+            <option value="$PROJECT_DIR$/backend/InventoryManagementSystem/SaleMicroService" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>
