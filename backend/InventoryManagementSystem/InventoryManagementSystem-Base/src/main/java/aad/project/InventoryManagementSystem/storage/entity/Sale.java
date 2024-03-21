@@ -58,7 +58,7 @@ public class Sale {
     }
 
     public Sale update() {
-        salesDAO.update(saleId.toString(), productId.toString(), quantitySold, saleDate);
+        salesDAO.update(saleId.toString(), productId.toString(), quantitySold, saleDate, saleId.toString());
         return this;
     }
 
