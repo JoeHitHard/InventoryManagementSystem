@@ -1,4 +1,4 @@
-package aad.project.InventoryManagementSystem.storage.entitites;
+package aad.project.InventoryManagementSystem.storage.entity;
 
 
 import aad.project.InventoryManagementSystem.storage.dao.AbstractCassandraDAO;

@@ -1,6 +1,6 @@
 package aad.project.InventoryManagementSystem.utils.storage.entity;
 
-import aad.project.InventoryManagementSystem.storage.entitites.Product;
+import aad.project.InventoryManagementSystem.storage.entity.Product;
 import com.datastax.oss.driver.api.core.cql.Row;
 
 public class ProductUtils {

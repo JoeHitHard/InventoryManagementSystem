@@ -1,8 +1,8 @@
 package aad.project.InventoryManagementSystem.utils.storage.entity;
 
 import aad.project.InventoryManagementSystem.config.scurity.exceptions.InvalidAuthRequest;
-import aad.project.InventoryManagementSystem.storage.entitites.Token;
-import aad.project.InventoryManagementSystem.storage.entitites.User;
+import aad.project.InventoryManagementSystem.storage.entity.Token;
+import aad.project.InventoryManagementSystem.storage.entity.User;
 import org.json.JSONObject;
 
 import java.util.UUID;

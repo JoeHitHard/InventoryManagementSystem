@@ -1,8 +1,8 @@
 package aad.project.InventoryManagementSystem.controller;
 
 import aad.project.InventoryManagementSystem.config.scurity.exceptions.InvalidAuthRequest;
-import aad.project.InventoryManagementSystem.storage.entitites.Sale;
-import aad.project.InventoryManagementSystem.storage.entitites.User;
+import aad.project.InventoryManagementSystem.storage.entity.Sale;
+import aad.project.InventoryManagementSystem.storage.entity.User;
 import aad.project.InventoryManagementSystem.storage.requests.SaleRequestBody;
 import aad.project.InventoryManagementSystem.utils.storage.entity.RequestAuthUtils;
 import aad.project.InventoryManagementSystem.utils.storage.entity.SaleUtils;

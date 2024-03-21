@@ -1,5 +1,10 @@
 #!/bin/sh
 
+cd ./InventoryManagementSystem-Base
+./gradlew clean build publishToMavenLocal
+cd ..
+
+
 cd ./AuthMicroService
 ./gradlew clean build
 cd ..

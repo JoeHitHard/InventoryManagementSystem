@@ -1,6 +1,6 @@
 package aad.project.InventoryManagementSystem.utils.storage.entity;
 
-import aad.project.InventoryManagementSystem.storage.entitites.User;
+import aad.project.InventoryManagementSystem.storage.entity.User;
 import org.json.JSONException;
 import org.json.JSONObject;
 

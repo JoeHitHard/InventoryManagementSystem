@@ -1,8 +1,8 @@
 package aad.project.InventoryManagementSystem.controller;
 
 import aad.project.InventoryManagementSystem.config.scurity.exceptions.InvalidAuthRequest;
-import aad.project.InventoryManagementSystem.storage.entitites.Product;
-import aad.project.InventoryManagementSystem.storage.entitites.User;
+import aad.project.InventoryManagementSystem.storage.entity.Product;
+import aad.project.InventoryManagementSystem.storage.entity.User;
 import aad.project.InventoryManagementSystem.storage.requests.ProductRequestBody;
 import aad.project.InventoryManagementSystem.utils.storage.entity.RequestAuthUtils;
 import com.fasterxml.jackson.databind.ObjectMapper;

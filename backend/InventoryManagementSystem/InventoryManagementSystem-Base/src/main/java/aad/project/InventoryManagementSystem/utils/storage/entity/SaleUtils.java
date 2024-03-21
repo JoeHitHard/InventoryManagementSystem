@@ -1,6 +1,6 @@
 package aad.project.InventoryManagementSystem.utils.storage.entity;
 
-import aad.project.InventoryManagementSystem.storage.entitites.Sale;
+import aad.project.InventoryManagementSystem.storage.entity.Sale;
 import aad.project.InventoryManagementSystem.storage.requests.SaleRequestBody;
 
 public class SaleUtils {

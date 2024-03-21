@@ -1,6 +1,6 @@
 package aad.project.InventoryManagementSystem.storage.requests;
 
-import aad.project.InventoryManagementSystem.storage.entitites.Product;
+import aad.project.InventoryManagementSystem.storage.entity.Product;
 
 // Class representing the request body for creating or updating a product
 public class ProductRequestBody {
