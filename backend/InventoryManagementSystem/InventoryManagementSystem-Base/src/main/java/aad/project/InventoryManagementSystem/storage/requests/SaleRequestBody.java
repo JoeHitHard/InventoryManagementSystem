@@ -9,6 +9,9 @@ public class SaleRequestBody {
     // Constructor, getters, and setters
 
 
+    public SaleRequestBody() {
+    }
+
     public SaleRequestBody(String productId, int quantitySold, Long saleDate) {
         this.productId = productId;
         this.quantitySold = quantitySold;

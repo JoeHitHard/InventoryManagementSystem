@@ -5,6 +5,7 @@ import aad.project.InventoryManagementSystem.storage.entity.Product;
 import aad.project.InventoryManagementSystem.storage.entity.User;
 import aad.project.InventoryManagementSystem.storage.requests.ProductRequestBody;
 import aad.project.InventoryManagementSystem.utils.storage.entity.RequestAuthUtils;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.boot.context.properties.bind.DefaultValue;
 import org.springframework.http.HttpStatus;
