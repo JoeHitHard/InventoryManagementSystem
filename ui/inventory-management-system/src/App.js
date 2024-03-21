@@ -3,8 +3,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import Dashboard from './components/Dashboard';
-// import ProductManagement from './components/ProductManagement';
-// import SalesPage from './components/SalesPage';
 import PrivateRoute from './components/PrivateRoute';
 
 function App() {
@@ -20,7 +18,15 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Login setIsLoggedIn={setIsLoggedIn} />} />
+        {isLoggedIn === false && <Route path="/" element={<Login setIsLoggedIn={setIsLoggedIn} />} />}
+        {isLoggedIn === true &&  <Route
+          path="/"
+          element={
+            <PrivateRoute isLoggedIn={isLoggedIn}>
+              <Dashboard />
+            </PrivateRoute>
+          }
+        />}
         <Route
           path="/dashboard"
           element={
@@ -36,19 +42,9 @@ function App() {
           }
         />
         <Route
-          path="/products"
+          path="/login"
           element={
-            <PrivateRoute isLoggedIn={isLoggedIn}>
-              {/* <ProductManagement /> */}
-            </PrivateRoute>
-          }
-        />
-        <Route
-          path="/sales"
-          element={
-            <PrivateRoute isLoggedIn={isLoggedIn}>
-              {/* <SalesPage /> */}
-            </PrivateRoute>
+            <Login setIsLoggedIn={setIsLoggedIn} />
           }
         />
       </Routes>
