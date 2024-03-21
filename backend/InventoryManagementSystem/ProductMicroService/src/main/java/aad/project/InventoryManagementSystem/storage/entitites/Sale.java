@@ -48,7 +48,7 @@ public class Sale {
     }
 
     public Sale save() {
-        salesDAO.insert(saleId.toString(), productId.toString(), quantitySold, saleDate);
+        salesDAO.insert(saleId.toString(), saleId.toString(), productId.toString(), quantitySold, saleDate);
         return this;
     }
 

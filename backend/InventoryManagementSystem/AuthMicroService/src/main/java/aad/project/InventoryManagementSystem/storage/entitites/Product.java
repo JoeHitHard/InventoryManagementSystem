@@ -50,7 +50,7 @@ public class Product {
     }
 
     public Product save() {
-        productDAO.insert(productId, name, description, price, quantity);
+        productDAO.insert(productId, productId, name, description, price, quantity);
         return this;
     }
 

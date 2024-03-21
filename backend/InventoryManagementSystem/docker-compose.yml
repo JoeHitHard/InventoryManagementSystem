@@ -46,6 +46,17 @@ services:
       timeout: 5s
       start_period: 20s
 
+#  cassandra:
+#    build: .
+#    image: cassandra
+#    container_name: cassandradb
+#    volumes:
+#      - ./cassandra.yaml:/etc/cassandra/cassandra.yaml
+#    ports:
+#      - "9042:9042"
+#    networks:
+#      - inventory-network
+
 networks:
   inventory-network:
     driver: bridge

@@ -30,11 +30,17 @@ public class AuthController {
     @PostMapping("/public/login")
     @ResponseBody
     public String logIn(@RequestBody String userDataString, @RequestParam(value = "role", defaultValue = "User") String role) throws Exception {
-        return RequestAuthUtils.login(new JSONObject(userDataString), role);
+        try {
+            return RequestAuthUtils.login(new JSONObject(userDataString), role);
+        } catch (Exception e) {
+            e.printStackTrace();
+            logger.error("{}", e.getCause(), e);
+            throw e;
+        }
     }
 
 
-    @PostMapping("/public/signUp")
+    @PostMapping("/public/signsignUpUp")
     @ResponseBody
     public String signUp(@RequestBody String userDataString) throws Exception {
         User user = UserUtils.getUser(new JSONObject(userDataString));
