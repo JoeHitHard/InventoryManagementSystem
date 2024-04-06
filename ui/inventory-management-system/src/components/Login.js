@@ -18,6 +18,7 @@ function Login({ setIsLoggedIn }) {
         setIsLoggedIn(true);
         window.location.href = "/dashboard"
       } else {
+        window.location.href = "/login"
         setError('Invalid username or password');
       }
     } catch (error) {

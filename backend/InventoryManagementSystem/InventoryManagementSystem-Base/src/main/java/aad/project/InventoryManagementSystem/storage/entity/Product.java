@@ -103,6 +103,9 @@ public class Product {
     }
 
     public void setQuantity(int quantity) {
+        if (quantity < 0 ) {
+            throw new RuntimeException("Product quantity cant be less than 0");
+        }
         this.quantity = quantity;
     }
 

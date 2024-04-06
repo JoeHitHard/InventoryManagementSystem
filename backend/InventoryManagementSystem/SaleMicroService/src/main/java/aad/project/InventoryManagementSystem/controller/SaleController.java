@@ -1,11 +1,13 @@
 package aad.project.InventoryManagementSystem.controller;
 
 import aad.project.InventoryManagementSystem.config.scurity.exceptions.InvalidAuthRequest;
+import aad.project.InventoryManagementSystem.storage.entity.Product;
 import aad.project.InventoryManagementSystem.storage.entity.Sale;
 import aad.project.InventoryManagementSystem.storage.entity.User;
 import aad.project.InventoryManagementSystem.storage.requests.SaleRequestBody;
 import aad.project.InventoryManagementSystem.utils.storage.entity.RequestAuthUtils;
 import aad.project.InventoryManagementSystem.utils.storage.entity.SaleUtils;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.context.properties.bind.DefaultValue;
@@ -32,11 +34,18 @@ public class SaleController {
         try {
             SaleRequestBody saleRequestBody = objectMapper.readValue(saleJson, SaleRequestBody.class);
             Sale sale = SaleUtils.getSale(UUID.randomUUID().toString(), saleRequestBody);
+            updateProduct(sale);
             Sale createdSale = sale.save();
             return new ResponseEntity<>(createdSale, HttpStatus.CREATED);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
+    }
+
+    private static void updateProduct(Sale sale) {
+        Product product = new Product(sale.getProductId());
+        product.setQuantity(product.getQuantity() - sale.getQuantitySold());
+        product.save();
     }
 
     @GetMapping("/{id}")
@@ -60,12 +69,32 @@ public class SaleController {
     @PutMapping("/{id}")
     public ResponseEntity<Sale> updateSale(@PathVariable String id, @RequestBody String saleJson,  @RequestHeader("Authorization") @DefaultValue("XXX") String authorizationHeader) throws InvalidAuthRequest {
         User user = RequestAuthUtils.getUser(authorizationHeader);
+        boolean productUpdated = false;
         try {
             SaleRequestBody saleRequestBody = objectMapper.readValue(saleJson, SaleRequestBody.class);
-            Sale sale = SaleUtils.getSale(id, saleRequestBody);
-            Sale updatedSale = sale.update();
+            Sale newSale = SaleUtils.getSale(id, saleRequestBody);
+            Sale oldSale = new Sale(id);
+            Product product = new Product(newSale.getProductId());
+            product.setQuantity(product.getQuantity() + oldSale.getQuantitySold());
+            product.save();
+            productUpdated = true;
+            updateProduct(newSale);
+            Sale updatedSale = newSale.update();
             return new ResponseEntity<>(updatedSale, HttpStatus.OK);
         } catch (Exception e) {
+            if (productUpdated) {
+                SaleRequestBody saleRequestBody = null;
+                try {
+                    saleRequestBody = objectMapper.readValue(saleJson, SaleRequestBody.class);
+                } catch (JsonProcessingException ex) {
+                    throw new RuntimeException(ex);
+                }
+                Sale newSale = SaleUtils.getSale(id, saleRequestBody);
+                Sale oldSale = new Sale(id);
+                Product product = new Product(newSale.getProductId());
+                product.setQuantity(product.getQuantity() - oldSale.getQuantitySold());
+                product.save();
+            }
             logger.error("{}", e.getMessage(), e);
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
